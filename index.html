@@ -38,16 +38,14 @@
         <script src="js/leaflet-measure.js"></script>
         <script src="js/leaflet-search.js"></script>
         <script src="data/pretoria_1.js"></script>
-        <script src="data/Dolomitic_Land_Inferred_2.js"></script>
-        <script src="data/Mineral_Fields_3.js"></script>
-        <script src="data/Dolomite_Report_Boundaries_4.js"></script>
-        <script src="data/Mineral_Points_5.js"></script>
-        <script src="data/Structural_Points_6.js"></script>
-        <script src="data/Dolomite_Borehole_Positions_7.js"></script>
-        <script src="data/Geological_Points_8.js"></script>
-        <script src="data/Tectonic_Line_9.js"></script>
-        <script src="data/Geological_Lines_10.js"></script>
-        <script src="data/COT_wards_11.js"></script>
+        <script src="data/Mineral_Fields_2.js"></script>
+        <script src="data/Geological_Polygons_3.js"></script>
+        <script src="data/COT_wards_4.js"></script>
+        <script src="data/Geological_Lines_5.js"></script>
+        <script src="data/Tectonic_Line_6.js"></script>
+        <script src="data/Geological_Points_7.js"></script>
+        <script src="data/Mineral_Points_8.js"></script>
+        <script src="data/Structural_Points_9.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -166,74 +164,7 @@
         });
         bounds_group.addLayer(layer_pretoria_1);
         map.addLayer(layer_pretoria_1);
-        function pop_Dolomitic_Land_Inferred_2(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (i in e.target._eventParents) {
-                        e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? Autolinker.link(String(feature.properties['OBJECTID'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Area_km2'] !== null ? Autolinker.link(String(feature.properties['Area_km2'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Id'] !== null ? Autolinker.link(String(feature.properties['Id'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Dolomite'] !== null ? Autolinker.link(String(feature.properties['Dolomite'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Descriptio'] !== null ? Autolinker.link(String(feature.properties['Descriptio'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['SHAPE_Leng'] !== null ? Autolinker.link(String(feature.properties['SHAPE_Leng'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['SHAPE_Area'] !== null ? Autolinker.link(String(feature.properties['SHAPE_Area'])) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_Dolomitic_Land_Inferred_2_0() {
-            return {
-                pane: 'pane_Dolomitic_Land_Inferred_2',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(231,113,72,1.0)',
-            }
-        }
-        map.createPane('pane_Dolomitic_Land_Inferred_2');
-        map.getPane('pane_Dolomitic_Land_Inferred_2').style.zIndex = 402;
-        map.getPane('pane_Dolomitic_Land_Inferred_2').style['mix-blend-mode'] = 'normal';
-        var layer_Dolomitic_Land_Inferred_2 = new L.geoJson(json_Dolomitic_Land_Inferred_2, {
-            attribution: '',
-            pane: 'pane_Dolomitic_Land_Inferred_2',
-            onEachFeature: pop_Dolomitic_Land_Inferred_2,
-            style: style_Dolomitic_Land_Inferred_2_0,
-        });
-        bounds_group.addLayer(layer_Dolomitic_Land_Inferred_2);
-        map.addLayer(layer_Dolomitic_Land_Inferred_2);
-        function pop_Mineral_Fields_3(feature, layer) {
+        function pop_Mineral_Fields_2(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -281,28 +212,28 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        var pattern_Mineral_Fields_3_0 = new L.StripePattern({
+        var pattern_Mineral_Fields_2_0 = new L.StripePattern({
             weight: 0.3,
             spaceWeight: 2.0,
-            color: '#000000',
+            color: '#e31a1c',
             opacity: 1.0,
             spaceOpacity: 0,
             angle: 225
         });
-        pattern_Mineral_Fields_3_0.addTo(map);
-        function style_Mineral_Fields_3_0() {
+        pattern_Mineral_Fields_2_0.addTo(map);
+        function style_Mineral_Fields_2_0() {
             return {
-                pane: 'pane_Mineral_Fields_3',
+                pane: 'pane_Mineral_Fields_2',
                 stroke: false,
                 fillOpacity: 1,
-                fillPattern: pattern_Mineral_Fields_3_0
+                fillPattern: pattern_Mineral_Fields_2_0
             }
         }
-        function style_Mineral_Fields_3_1() {
+        function style_Mineral_Fields_2_1() {
             return {
-                pane: 'pane_Mineral_Fields_3',
+                pane: 'pane_Mineral_Fields_2',
                 opacity: 1,
-                color: 'rgba(0,0,0,1.0)',
+                color: 'rgba(227,26,28,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
@@ -310,18 +241,18 @@
                 fillOpacity: 0,
             }
         }
-        map.createPane('pane_Mineral_Fields_3');
-        map.getPane('pane_Mineral_Fields_3').style.zIndex = 403;
-        map.getPane('pane_Mineral_Fields_3').style['mix-blend-mode'] = 'normal';
-        var layer_Mineral_Fields_3 = new L.geoJson.multiStyle(json_Mineral_Fields_3, {
+        map.createPane('pane_Mineral_Fields_2');
+        map.getPane('pane_Mineral_Fields_2').style.zIndex = 402;
+        map.getPane('pane_Mineral_Fields_2').style['mix-blend-mode'] = 'normal';
+        var layer_Mineral_Fields_2 = new L.geoJson.multiStyle(json_Mineral_Fields_2, {
             attribution: '',
-            pane: 'pane_Mineral_Fields_3',
-            onEachFeature: pop_Mineral_Fields_3,
-            styles: [style_Mineral_Fields_3_0,style_Mineral_Fields_3_1,]
+            pane: 'pane_Mineral_Fields_2',
+            onEachFeature: pop_Mineral_Fields_2,
+            styles: [style_Mineral_Fields_2_0,style_Mineral_Fields_2_1,]
         });
-        bounds_group.addLayer(layer_Mineral_Fields_3);
-        map.addLayer(layer_Mineral_Fields_3);
-        function pop_Dolomite_Report_Boundaries_4(feature, layer) {
+        bounds_group.addLayer(layer_Mineral_Fields_2);
+        map.addLayer(layer_Mineral_Fields_2);
+        function pop_Geological_Polygons_3(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -342,10 +273,64 @@
                         <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? Autolinker.link(String(feature.properties['OBJECTID'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['SAGEOLIT_N'] !== null ? Autolinker.link(String(feature.properties['SAGEOLIT_N'])) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['UQ_GEOL'] !== null ? Autolinker.link(String(feature.properties['UQ_GEOL'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['F_NO'] !== null ? Autolinker.link(String(feature.properties['F_NO'])) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['UQ_SACS_NO'] !== null ? Autolinker.link(String(feature.properties['UQ_SACS_NO'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['LITHSTRAT'] !== null ? Autolinker.link(String(feature.properties['LITHSTRAT'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['LITHRANK'] !== null ? Autolinker.link(String(feature.properties['LITHRANK'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['PARENT1'] !== null ? Autolinker.link(String(feature.properties['PARENT1'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['RANK1'] !== null ? Autolinker.link(String(feature.properties['RANK1'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['PARENT2'] !== null ? Autolinker.link(String(feature.properties['PARENT2'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['RANK2'] !== null ? Autolinker.link(String(feature.properties['RANK2'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['PARENT3'] !== null ? Autolinker.link(String(feature.properties['PARENT3'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['RANK3'] !== null ? Autolinker.link(String(feature.properties['RANK3'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['PARENT4'] !== null ? Autolinker.link(String(feature.properties['PARENT4'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['RANK4'] !== null ? Autolinker.link(String(feature.properties['RANK4'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CHRONSTRAT'] !== null ? Autolinker.link(String(feature.properties['CHRONSTRAT'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CHRONRANK'] !== null ? Autolinker.link(String(feature.properties['CHRONRANK'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['LITHO_GRP'] !== null ? Autolinker.link(String(feature.properties['LITHO_GRP'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DESCRIPTIO'] !== null ? Autolinker.link(String(feature.properties['DESCRIPTIO'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['COLOR_CODE'] !== null ? Autolinker.link(String(feature.properties['COLOR_CODE'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['HATCH'] !== null ? Autolinker.link(String(feature.properties['HATCH'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['HATCHT'] !== null ? Autolinker.link(String(feature.properties['HATCHT'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['TEXT_LABEL'] !== null ? Autolinker.link(String(feature.properties['TEXT_LABEL'])) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['Shape_STAr'] !== null ? Autolinker.link(String(feature.properties['Shape_STAr'])) : '') + '</td>\
@@ -354,41 +339,42 @@
                         <td colspan="2">' + (feature.properties['Shape_STLe'] !== null ? Autolinker.link(String(feature.properties['Shape_STLe'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['SHAPE_Leng'] !== null ? Autolinker.link(String(feature.properties['SHAPE_Leng'])) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Shape_Leng'] !== null ? Autolinker.link(String(feature.properties['Shape_Leng'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['SHAPE_Area'] !== null ? Autolinker.link(String(feature.properties['SHAPE_Area'])) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Shape_Le_1'] !== null ? Autolinker.link(String(feature.properties['Shape_Le_1'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Shape_Area'] !== null ? Autolinker.link(String(feature.properties['Shape_Area'])) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Dolomite_Report_Boundaries_4_0() {
+        function style_Geological_Polygons_3_0() {
             return {
-                pane: 'pane_Dolomite_Report_Boundaries_4',
+                pane: 'pane_Geological_Polygons_3',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(152,125,183,1.0)',
+                fillOpacity: 0,
             }
         }
-        map.createPane('pane_Dolomite_Report_Boundaries_4');
-        map.getPane('pane_Dolomite_Report_Boundaries_4').style.zIndex = 404;
-        map.getPane('pane_Dolomite_Report_Boundaries_4').style['mix-blend-mode'] = 'normal';
-        var layer_Dolomite_Report_Boundaries_4 = new L.geoJson(json_Dolomite_Report_Boundaries_4, {
+        map.createPane('pane_Geological_Polygons_3');
+        map.getPane('pane_Geological_Polygons_3').style.zIndex = 403;
+        map.getPane('pane_Geological_Polygons_3').style['mix-blend-mode'] = 'normal';
+        var layer_Geological_Polygons_3 = new L.geoJson(json_Geological_Polygons_3, {
             attribution: '',
-            pane: 'pane_Dolomite_Report_Boundaries_4',
-            onEachFeature: pop_Dolomite_Report_Boundaries_4,
-            style: style_Dolomite_Report_Boundaries_4_0,
+            pane: 'pane_Geological_Polygons_3',
+            onEachFeature: pop_Geological_Polygons_3,
+            style: style_Geological_Polygons_3_0,
         });
-        bounds_group.addLayer(layer_Dolomite_Report_Boundaries_4);
-        map.addLayer(layer_Dolomite_Report_Boundaries_4);
-        function pop_Mineral_Points_5(feature, layer) {
+        bounds_group.addLayer(layer_Geological_Polygons_3);
+        map.addLayer(layer_Geological_Polygons_3);
+        function pop_COT_wards_4(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -409,325 +395,44 @@
                         <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? Autolinker.link(String(feature.properties['OBJECTID'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['COMMOD'] !== null ? Autolinker.link(String(feature.properties['COMMOD'])) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['PROVINCE'] !== null ? Autolinker.link(String(feature.properties['PROVINCE'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['PTTYPE'] !== null ? Autolinker.link(String(feature.properties['PTTYPE'])) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['CAT_B'] !== null ? Autolinker.link(String(feature.properties['CAT_B'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['PTTYPET'] !== null ? Autolinker.link(String(feature.properties['PTTYPET'])) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['WARDNO'] !== null ? Autolinker.link(String(feature.properties['WARDNO'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['MAPNO'] !== null ? Autolinker.link(String(feature.properties['MAPNO'])) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['WARD_ID'] !== null ? Autolinker.link(String(feature.properties['WARD_ID'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['DESCR'] !== null ? Autolinker.link(String(feature.properties['DESCR'])) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_Mineral_Points_5_0() {
-            return {
-                pane: 'pane_Mineral_Points_5',
-                radius: 3.999999999999997,
-                opacity: 1,
-                color: 'rgba(255,255,255,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 2.0,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(0,0,0,1.0)',
-            }
-        }
-        map.createPane('pane_Mineral_Points_5');
-        map.getPane('pane_Mineral_Points_5').style.zIndex = 405;
-        map.getPane('pane_Mineral_Points_5').style['mix-blend-mode'] = 'normal';
-        var layer_Mineral_Points_5 = new L.geoJson(json_Mineral_Points_5, {
-            attribution: '',
-            pane: 'pane_Mineral_Points_5',
-            onEachFeature: pop_Mineral_Points_5,
-            pointToLayer: function (feature, latlng) {
-                var context = {
-                    feature: feature,
-                    variables: {}
-                };
-                return L.circleMarker(latlng, style_Mineral_Points_5_0(feature));
-            },
-        });
-        bounds_group.addLayer(layer_Mineral_Points_5);
-        map.addLayer(layer_Mineral_Points_5);
-        function pop_Structural_Points_6(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (i in e.target._eventParents) {
-                        e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['PTTYPE'] !== null ? Autolinker.link(String(feature.properties['PTTYPE'])) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['AREA'] !== null ? Autolinker.link(String(feature.properties['AREA'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['AZIMUTH'] !== null ? Autolinker.link(String(feature.properties['AZIMUTH'])) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['WARDWINNER'] !== null ? Autolinker.link(String(feature.properties['WARDWINNER'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['DIP'] !== null ? Autolinker.link(String(feature.properties['DIP'])) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['REG_VOTERS'] !== null ? Autolinker.link(String(feature.properties['REG_VOTERS'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['PTTYPET'] !== null ? Autolinker.link(String(feature.properties['PTTYPET'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['MAPNO'] !== null ? Autolinker.link(String(feature.properties['MAPNO'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['DESCR'] !== null ? Autolinker.link(String(feature.properties['DESCR'])) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_Structural_Points_6_0() {
-            return {
-                pane: 'pane_Structural_Points_6',
-                radius: 4.0,
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(114,155,111,1.0)',
-            }
-        }
-        map.createPane('pane_Structural_Points_6');
-        map.getPane('pane_Structural_Points_6').style.zIndex = 406;
-        map.getPane('pane_Structural_Points_6').style['mix-blend-mode'] = 'normal';
-        var layer_Structural_Points_6 = new L.geoJson(json_Structural_Points_6, {
-            attribution: '',
-            pane: 'pane_Structural_Points_6',
-            onEachFeature: pop_Structural_Points_6,
-            pointToLayer: function (feature, latlng) {
-                var context = {
-                    feature: feature,
-                    variables: {}
-                };
-                return L.circleMarker(latlng, style_Structural_Points_6_0(feature));
-            },
-        });
-        bounds_group.addLayer(layer_Structural_Points_6);
-        map.addLayer(layer_Structural_Points_6);
-        function pop_Dolomite_Borehole_Positions_7(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (i in e.target._eventParents) {
-                        e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? Autolinker.link(String(feature.properties['OBJECTID'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['REF_F_NO'] !== null ? Autolinker.link(String(feature.properties['REF_F_NO'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['BH_No'] !== null ? Autolinker.link(String(feature.properties['BH_No'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['REF_SAG'] !== null ? Autolinker.link(String(feature.properties['REF_SAG'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Method'] !== null ? Autolinker.link(String(feature.properties['Method'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['POINT_X'] !== null ? Autolinker.link(String(feature.properties['POINT_X'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['POINT_Y'] !== null ? Autolinker.link(String(feature.properties['POINT_Y'])) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_Dolomite_Borehole_Positions_7_0() {
-            return {
-                pane: 'pane_Dolomite_Borehole_Positions_7',
-                radius: 4.0,
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(190,207,80,1.0)',
-            }
-        }
-        map.createPane('pane_Dolomite_Borehole_Positions_7');
-        map.getPane('pane_Dolomite_Borehole_Positions_7').style.zIndex = 407;
-        map.getPane('pane_Dolomite_Borehole_Positions_7').style['mix-blend-mode'] = 'normal';
-        var layer_Dolomite_Borehole_Positions_7 = new L.geoJson(json_Dolomite_Borehole_Positions_7, {
-            attribution: '',
-            pane: 'pane_Dolomite_Borehole_Positions_7',
-            onEachFeature: pop_Dolomite_Borehole_Positions_7,
-            pointToLayer: function (feature, latlng) {
-                var context = {
-                    feature: feature,
-                    variables: {}
-                };
-                return L.circleMarker(latlng, style_Dolomite_Borehole_Positions_7_0(feature));
-            },
-        });
-        bounds_group.addLayer(layer_Dolomite_Borehole_Positions_7);
-        map.addLayer(layer_Dolomite_Borehole_Positions_7);
-        function pop_Geological_Points_8(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (i in e.target._eventParents) {
-                        e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? Autolinker.link(String(feature.properties['OBJECTID'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['PTTYPE'] !== null ? Autolinker.link(String(feature.properties['PTTYPE'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['PTTYPET'] !== null ? Autolinker.link(String(feature.properties['PTTYPET'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['UQ_GEOL'] !== null ? Autolinker.link(String(feature.properties['UQ_GEOL'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['MAPNO'] !== null ? Autolinker.link(String(feature.properties['MAPNO'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['AZIMUTH'] !== null ? Autolinker.link(String(feature.properties['AZIMUTH'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['DIP'] !== null ? Autolinker.link(String(feature.properties['DIP'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['DESCR'] !== null ? Autolinker.link(String(feature.properties['DESCR'])) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_Geological_Points_8_0() {
-            return {
-                pane: 'pane_Geological_Points_8',
-                radius: 4.0,
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(23,186,255,1.0)',
-            }
-        }
-        map.createPane('pane_Geological_Points_8');
-        map.getPane('pane_Geological_Points_8').style.zIndex = 408;
-        map.getPane('pane_Geological_Points_8').style['mix-blend-mode'] = 'normal';
-        var layer_Geological_Points_8 = new L.geoJson(json_Geological_Points_8, {
-            attribution: '',
-            pane: 'pane_Geological_Points_8',
-            onEachFeature: pop_Geological_Points_8,
-            pointToLayer: function (feature, latlng) {
-                var context = {
-                    feature: feature,
-                    variables: {}
-                };
-                return L.circleMarker(latlng, style_Geological_Points_8_0(feature));
-            },
-        });
-        bounds_group.addLayer(layer_Geological_Points_8);
-        map.addLayer(layer_Geological_Points_8);
-        function pop_Tectonic_Line_9(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (i in e.target._eventParents) {
-                        e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['OBJECTID_1'] !== null ? Autolinker.link(String(feature.properties['OBJECTID_1'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? Autolinker.link(String(feature.properties['OBJECTID'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['LNTYPE'] !== null ? Autolinker.link(String(feature.properties['LNTYPE'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['LNTYPET'] !== null ? Autolinker.link(String(feature.properties['LNTYPET'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['MAPNO'] !== null ? Autolinker.link(String(feature.properties['MAPNO'])) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['EA_NUMBER'] !== null ? Autolinker.link(String(feature.properties['EA_NUMBER'])) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['Shape_Leng'] !== null ? Autolinker.link(String(feature.properties['Shape_Leng'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['SHAPE_Le_1'] !== null ? Autolinker.link(String(feature.properties['SHAPE_Le_1'])) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Shape_Area'] !== null ? Autolinker.link(String(feature.properties['Shape_Area'])) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Tectonic_Line_9_0() {
+        function style_COT_wards_4_0() {
             return {
-                pane: 'pane_Tectonic_Line_9',
+                pane: 'pane_COT_wards_4',
                 opacity: 1,
-                color: 'rgba(213,162,60,1.0)',
+                color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
@@ -735,18 +440,18 @@
                 fillOpacity: 0,
             }
         }
-        map.createPane('pane_Tectonic_Line_9');
-        map.getPane('pane_Tectonic_Line_9').style.zIndex = 409;
-        map.getPane('pane_Tectonic_Line_9').style['mix-blend-mode'] = 'normal';
-        var layer_Tectonic_Line_9 = new L.geoJson(json_Tectonic_Line_9, {
+        map.createPane('pane_COT_wards_4');
+        map.getPane('pane_COT_wards_4').style.zIndex = 404;
+        map.getPane('pane_COT_wards_4').style['mix-blend-mode'] = 'normal';
+        var layer_COT_wards_4 = new L.geoJson(json_COT_wards_4, {
             attribution: '',
-            pane: 'pane_Tectonic_Line_9',
-            onEachFeature: pop_Tectonic_Line_9,
-            style: style_Tectonic_Line_9_0,
+            pane: 'pane_COT_wards_4',
+            onEachFeature: pop_COT_wards_4,
+            style: style_COT_wards_4_0,
         });
-        bounds_group.addLayer(layer_Tectonic_Line_9);
-        map.addLayer(layer_Tectonic_Line_9);
-        function pop_Geological_Lines_10(feature, layer) {
+        bounds_group.addLayer(layer_COT_wards_4);
+        map.addLayer(layer_COT_wards_4);
+        function pop_Geological_Lines_5(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -791,11 +496,11 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Geological_Lines_10_0() {
+        function style_Geological_Lines_5_0() {
             return {
-                pane: 'pane_Geological_Lines_10',
+                pane: 'pane_Geological_Lines_5',
                 opacity: 1,
-                color: 'rgba(72,183,79,1.0)',
+                color: 'rgba(164,113,88,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
@@ -803,18 +508,83 @@
                 fillOpacity: 0,
             }
         }
-        map.createPane('pane_Geological_Lines_10');
-        map.getPane('pane_Geological_Lines_10').style.zIndex = 410;
-        map.getPane('pane_Geological_Lines_10').style['mix-blend-mode'] = 'normal';
-        var layer_Geological_Lines_10 = new L.geoJson(json_Geological_Lines_10, {
+        map.createPane('pane_Geological_Lines_5');
+        map.getPane('pane_Geological_Lines_5').style.zIndex = 405;
+        map.getPane('pane_Geological_Lines_5').style['mix-blend-mode'] = 'normal';
+        var layer_Geological_Lines_5 = new L.geoJson(json_Geological_Lines_5, {
             attribution: '',
-            pane: 'pane_Geological_Lines_10',
-            onEachFeature: pop_Geological_Lines_10,
-            style: style_Geological_Lines_10_0,
+            pane: 'pane_Geological_Lines_5',
+            onEachFeature: pop_Geological_Lines_5,
+            style: style_Geological_Lines_5_0,
         });
-        bounds_group.addLayer(layer_Geological_Lines_10);
-        map.addLayer(layer_Geological_Lines_10);
-        function pop_COT_wards_11(feature, layer) {
+        bounds_group.addLayer(layer_Geological_Lines_5);
+        map.addLayer(layer_Geological_Lines_5);
+        function pop_Tectonic_Line_6(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['OBJECTID_1'] !== null ? Autolinker.link(String(feature.properties['OBJECTID_1'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? Autolinker.link(String(feature.properties['OBJECTID'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['LNTYPE'] !== null ? Autolinker.link(String(feature.properties['LNTYPE'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['LNTYPET'] !== null ? Autolinker.link(String(feature.properties['LNTYPET'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['MAPNO'] !== null ? Autolinker.link(String(feature.properties['MAPNO'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Shape_Leng'] !== null ? Autolinker.link(String(feature.properties['Shape_Leng'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['SHAPE_Le_1'] !== null ? Autolinker.link(String(feature.properties['SHAPE_Le_1'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Tectonic_Line_6_0() {
+            return {
+                pane: 'pane_Tectonic_Line_6',
+                opacity: 1,
+                color: 'rgba(183,72,75,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+            }
+        }
+        map.createPane('pane_Tectonic_Line_6');
+        map.getPane('pane_Tectonic_Line_6').style.zIndex = 406;
+        map.getPane('pane_Tectonic_Line_6').style['mix-blend-mode'] = 'normal';
+        var layer_Tectonic_Line_6 = new L.geoJson(json_Tectonic_Line_6, {
+            attribution: '',
+            pane: 'pane_Tectonic_Line_6',
+            onEachFeature: pop_Tectonic_Line_6,
+            style: style_Tectonic_Line_6_0,
+        });
+        bounds_group.addLayer(layer_Tectonic_Line_6);
+        map.addLayer(layer_Tectonic_Line_6);
+        function pop_Geological_Points_7(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -835,65 +605,204 @@
                         <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? Autolinker.link(String(feature.properties['OBJECTID'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Province'] !== null ? Autolinker.link(String(feature.properties['Province'])) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['PTTYPE'] !== null ? Autolinker.link(String(feature.properties['PTTYPE'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Municipali'] !== null ? Autolinker.link(String(feature.properties['Municipali'])) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['PTTYPET'] !== null ? Autolinker.link(String(feature.properties['PTTYPET'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['CAT_B'] !== null ? Autolinker.link(String(feature.properties['CAT_B'])) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['UQ_GEOL'] !== null ? Autolinker.link(String(feature.properties['UQ_GEOL'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['WardNo'] !== null ? Autolinker.link(String(feature.properties['WardNo'])) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['MAPNO'] !== null ? Autolinker.link(String(feature.properties['MAPNO'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['District'] !== null ? Autolinker.link(String(feature.properties['District'])) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['AZIMUTH'] !== null ? Autolinker.link(String(feature.properties['AZIMUTH'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['DistrictCo'] !== null ? Autolinker.link(String(feature.properties['DistrictCo'])) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['DIP'] !== null ? Autolinker.link(String(feature.properties['DIP'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Date'] !== null ? Autolinker.link(String(feature.properties['Date'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['WardID'] !== null ? Autolinker.link(String(feature.properties['WardID'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['WardLabel'] !== null ? Autolinker.link(String(feature.properties['WardLabel'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['SHAPE_Leng'] !== null ? Autolinker.link(String(feature.properties['SHAPE_Leng'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['SHAPE_Area'] !== null ? Autolinker.link(String(feature.properties['SHAPE_Area'])) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['DESCR'] !== null ? Autolinker.link(String(feature.properties['DESCR'])) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_COT_wards_11_0() {
+        function style_Geological_Points_7_0() {
             return {
-                pane: 'pane_COT_wards_11',
+                pane: 'pane_Geological_Points_7',
+                radius: 4.0,
                 opacity: 1,
-                color: 'rgba(0,0,0,1.0)',
+                color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 1.0,
-                fillOpacity: 0,
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(213,180,60,1.0)',
             }
         }
-        map.createPane('pane_COT_wards_11');
-        map.getPane('pane_COT_wards_11').style.zIndex = 411;
-        map.getPane('pane_COT_wards_11').style['mix-blend-mode'] = 'normal';
-        var layer_COT_wards_11 = new L.geoJson(json_COT_wards_11, {
+        map.createPane('pane_Geological_Points_7');
+        map.getPane('pane_Geological_Points_7').style.zIndex = 407;
+        map.getPane('pane_Geological_Points_7').style['mix-blend-mode'] = 'normal';
+        var layer_Geological_Points_7 = new L.geoJson(json_Geological_Points_7, {
             attribution: '',
-            pane: 'pane_COT_wards_11',
-            onEachFeature: pop_COT_wards_11,
-            style: style_COT_wards_11_0,
+            pane: 'pane_Geological_Points_7',
+            onEachFeature: pop_Geological_Points_7,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_Geological_Points_7_0(feature));
+            },
         });
-        bounds_group.addLayer(layer_COT_wards_11);
-        map.addLayer(layer_COT_wards_11);
+        bounds_group.addLayer(layer_Geological_Points_7);
+        map.addLayer(layer_Geological_Points_7);
+        function pop_Mineral_Points_8(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? Autolinker.link(String(feature.properties['OBJECTID'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['COMMOD'] !== null ? Autolinker.link(String(feature.properties['COMMOD'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['PTTYPE'] !== null ? Autolinker.link(String(feature.properties['PTTYPE'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['PTTYPET'] !== null ? Autolinker.link(String(feature.properties['PTTYPET'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['MAPNO'] !== null ? Autolinker.link(String(feature.properties['MAPNO'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DESCR'] !== null ? Autolinker.link(String(feature.properties['DESCR'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Mineral_Points_8_0() {
+            return {
+                pane: 'pane_Mineral_Points_8',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(141,90,153,1.0)',
+            }
+        }
+        map.createPane('pane_Mineral_Points_8');
+        map.getPane('pane_Mineral_Points_8').style.zIndex = 408;
+        map.getPane('pane_Mineral_Points_8').style['mix-blend-mode'] = 'normal';
+        var layer_Mineral_Points_8 = new L.geoJson(json_Mineral_Points_8, {
+            attribution: '',
+            pane: 'pane_Mineral_Points_8',
+            onEachFeature: pop_Mineral_Points_8,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_Mineral_Points_8_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_Mineral_Points_8);
+        map.addLayer(layer_Mineral_Points_8);
+        function pop_Structural_Points_9(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['PTTYPE'] !== null ? Autolinker.link(String(feature.properties['PTTYPE'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['AZIMUTH'] !== null ? Autolinker.link(String(feature.properties['AZIMUTH'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DIP'] !== null ? Autolinker.link(String(feature.properties['DIP'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['PTTYPET'] !== null ? Autolinker.link(String(feature.properties['PTTYPET'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['MAPNO'] !== null ? Autolinker.link(String(feature.properties['MAPNO'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DESCR'] !== null ? Autolinker.link(String(feature.properties['DESCR'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Structural_Points_9_0() {
+            return {
+                pane: 'pane_Structural_Points_9',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(61,128,53,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(84,176,74,1.0)',
+            }
+        }
+        map.createPane('pane_Structural_Points_9');
+        map.getPane('pane_Structural_Points_9').style.zIndex = 409;
+        map.getPane('pane_Structural_Points_9').style['mix-blend-mode'] = 'normal';
+        var layer_Structural_Points_9 = new L.geoJson(json_Structural_Points_9, {
+            attribution: '',
+            pane: 'pane_Structural_Points_9',
+            onEachFeature: pop_Structural_Points_9,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_Structural_Points_9_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_Structural_Points_9);
+        map.addLayer(layer_Structural_Points_9);
         var osmGeocoder = new L.Control.Geocoder({
             collapsed: true,
             position: 'topleft',
@@ -905,13 +814,13 @@
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/COT_wards_11.png" /> COT_wards': layer_COT_wards_11,'<img src="legend/Geological_Lines_10.png" /> Geological_Lines': layer_Geological_Lines_10,'<img src="legend/Tectonic_Line_9.png" /> Tectonic_Line': layer_Tectonic_Line_9,'<img src="legend/Geological_Points_8.png" /> Geological_Points': layer_Geological_Points_8,'<img src="legend/Dolomite_Borehole_Positions_7.png" /> Dolomite_Borehole_Positions': layer_Dolomite_Borehole_Positions_7,'<img src="legend/Structural_Points_6.png" /> Structural_Points': layer_Structural_Points_6,'<img src="legend/Mineral_Points_5.png" /> Mineral_Points': layer_Mineral_Points_5,'<img src="legend/Dolomite_Report_Boundaries_4.png" /> Dolomite_Report_Boundaries': layer_Dolomite_Report_Boundaries_4,'<img src="legend/Mineral_Fields_3.png" /> Mineral_Fields': layer_Mineral_Fields_3,'<img src="legend/Dolomitic_Land_Inferred_2.png" /> Dolomitic_Land_Inferred': layer_Dolomitic_Land_Inferred_2,'<img src="legend/pretoria_1.png" /> pretoria': layer_pretoria_1,"OpenStreetMap": layer_OpenStreetMap_0,},{collapsed:false}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/Structural_Points_9.png" /> Structural_Points': layer_Structural_Points_9,'<img src="legend/Mineral_Points_8.png" /> Mineral_Points': layer_Mineral_Points_8,'<img src="legend/Geological_Points_7.png" /> Geological_Points': layer_Geological_Points_7,'<img src="legend/Tectonic_Line_6.png" /> Tectonic_Line': layer_Tectonic_Line_6,'<img src="legend/Geological_Lines_5.png" /> Geological_Lines': layer_Geological_Lines_5,'<img src="legend/COT_wards_4.png" /> COT_wards': layer_COT_wards_4,'<img src="legend/Geological_Polygons_3.png" /> Geological_Polygons': layer_Geological_Polygons_3,'<img src="legend/Mineral_Fields_2.png" /> Mineral_Fields': layer_Mineral_Fields_2,'<img src="legend/pretoria_1.png" /> pretoria': layer_pretoria_1,"OpenStreetMap": layer_OpenStreetMap_0,},{collapsed:false}).addTo(map);
         setBounds();
         map.addControl(new L.Control.Search({
-            layer: layer_COT_wards_11,
+            layer: layer_COT_wards_4,
             initial: false,
             hideMarkerOnCollapse: true,
-            propertyName: 'WardNo'}));
+            propertyName: 'WARD_ID'}));
         document.getElementsByClassName('search-button')[0].className +=
          ' fa fa-binoculars';
         </script>
